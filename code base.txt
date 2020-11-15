@@ -1,0 +1,34 @@
+
+Client.on("message" , message => {
+	if(message.content.startsWith(prefix + "play")){
+		if(message.member.voice.channel){
+			message.member.voice.channel.join().then(connection => {
+				let args = message.content.split(" ");
+
+				if(!args[1]){
+					message.reply("Lien non valide");
+					connection.disconnect();
+				}
+				else {
+					let dispatcher = connection.play(ytdl(args[1], { quality: "highestaudio" }, { volume: "20" }));
+
+					dispatcher.on("finish", () => {
+						dispatcher.destroy();
+						connection.disconnect();
+					});
+
+					dispatcher.on("error", err => {
+						console.log("Erreur de dispatcher : " + err);
+					});
+				}
+			}).catch(err => {
+				message.reply("Erreur lors de la connexions" + err);
+			});
+		}
+		else {
+			message.reply("Aller en tchat vocale puis retenter");
+		}
+	}
+
+	if(message.author.bot) return;
+});

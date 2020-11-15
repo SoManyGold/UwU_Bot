@@ -1,0 +1,19 @@
+https://www.youtube.com/watch?v=VBmq7k160bU => https://youtu.be/VBmq7k160bU
+https://www.youtube.com/watch?v=dKYbMzrft3w => https://youtu.be/dKYbMzrft3w
+https://www.youtube.com/watch?v=uDwR9s80P3E => https://youtu.be/uDwR9s80P3E
+https://www.youtube.com/watch?v=7LGcSlK6LTc => https://youtu.be/7LGcSlK6LTc
+https://www.youtube.com/watch?v=Va7VeHQMIss => https://youtu.be/Va7VeHQMIss
+https://www.youtube.com/watch?v=s0khp_WrcRU => https://youtu.be/s0khp_WrcRU
+____________________________________________________________________________________________
+
+https://					=> https://
+	www.youtube.com/			=>	youtu.be/
+			watch?v=		=>		@
+				s0khp_WrcRU	=>		s0khp_WrcRU
+____________________________________________________________________________________________
+
++ args précédents
+args[1]https://
+args[2]
+args[3]
+args[4]xxxxxxxxxxx 	*/11 caractères*/
