@@ -1,4 +1,3 @@
-/* ========== Constence ========== */
 const Discord = require("discord.js"); 
 const { url } = require("inspector");
 const { send } = require("process");
@@ -6,31 +5,27 @@ const ytdl = require("ytdl-core");
 
 const Client = new Discord.Client
 
-/* ========== Prefix ========== */
-const prefix = "yt"
+const prefix = "!"
 
-/* ========== Token ========== */
-Client.login("Nzc2MDM0NTI0NjE3NjM3ODg5.X6vAeA.QrX_PNH-5aeFFbtasUJpLGWnLGY")
+Client.login("Nzc2MDM0NTI0NjE3NjM3ODg5.X6vAeA.iGutyG6S-1udt31gL96N0WRv9wY")
 
-/* ========== Description du bot ========== */
 Client.on("ready" , () => {
-	console.group("Le Bot UwU a été correctement UwUé")
+	console.group("Bot UwU mise à jour correctement")
 	Client.user.setActivity("@BenjaminA2mains")
 });
 
-/* ========== Lien Youtube.com ou Youtu.be ========== */
 Client.on("message" , message => {
-	if(message.content.startsWith("prefix")){
+	if(message.content.startsWith(prefix + "play")){
 		if(message.member.voice.channel){
 			message.member.voice.channel.join().then(connection => {
 				let args = message.content.split(" ");
 
 				if(!args[1]){
-					message.reply("Lien non valide");
+					message.reply("lien non valide");
 					connection.disconnect();
 				}
 				else {
-					let dispatcher = connection.play(ytdl("https://youtu.be/" + args[1], { quality: "highestaudio" }));
+					let dispatcher = connection.play(ytdl(args[1], { quality: "highestaudio" }));
 
 					dispatcher.on("finish", () => {
 						dispatcher.destroy();
@@ -38,7 +33,7 @@ Client.on("message" , message => {
 					});
 
 					dispatcher.on("error", err => {
-						console.log("Erreur de dispatcher : " + err);
+						console.log("erreur de dispatcher : " + err);
 					});
 				}
 			}).catch(err => {
@@ -49,5 +44,11 @@ Client.on("message" , message => {
 			message.reply("Aller en tchat vocale puis retenter");
 		}
 	}
+
 	if(message.author.bot) return;
+	
+	if(message.content == "uwu joue l'opening de No Game No Life"){
+		message.channel.send("https://m1.casimages.com/m/2020/10/31//xpT8Kb-01-This-game.mp3");
+		message.channel.send("Si tu veux le DL https://www.casimages.com/md/8PplOgre5Ub (4,34Mo)");
+	}
 });
